@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>author</td>
+            <td>publish</td>
+            </tr>
+        {% for i in res %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.publish}}</td>
+            <td><a href="{% url 'fupdate' data=i.id %}"><button>update</button></a> </td>
+            <td><a href="{% url 'fdelete' data=i.id %}"><button>delete</button></a> </td>
+
+            </tr>
+        {% endfor %}
+        </table>
+</body>
+</html>
